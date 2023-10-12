@@ -1,0 +1,39 @@
+.carousel-prev:before {
+    border-radius: 100%;
+    background-color: transparent;
+    padding: 1.5rem;
+    position: absolute;
+    top:43%;
+    left: 10%;
+    overflow: visible;
+}
+
+.carousel-next:before {
+    border-radius: 100%;
+    background-color: transparent;
+    padding: 1.5rem;
+    top: 50%;
+    right: 10%;
+    overflow: visible;
+}
+
+@media screen and (max-width: 768px) {
+    .carousel-prev {
+        border-radius: 100%;
+        background-color: transparent;
+        padding: 1rem;
+        position: absolute;
+        top:45%;
+        left: -10%;
+        display: hidden;
+    }
+    
+    .carousel-next {
+        border-radius: 100%;
+        background-color: transparent;
+        padding: 1rem;
+        top: 20%;
+        right: 90%;
+        display: hidden;
+    }
+}

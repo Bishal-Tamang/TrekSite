@@ -1,0 +1,10 @@
+
+.carousel-row{
+    margin-left: 1.5rem;
+    /* height: 100vh; */
+}
+
+
+.carousel-slide{
+    overflow: hidden;
+}
