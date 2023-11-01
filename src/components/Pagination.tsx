@@ -105,7 +105,7 @@ const Pagination = ({ data }: PaginationProps) => {
         type="button"
         onClick={handlePreviousPage}
         disabled={currentPage === 1}
-        className='rounded-full hover:border cursor-pointer border-[#19A948] p-4'
+        className='rounded-full border cursor-pointer border-[#19A948] p-4 mx-2 hover:shadow-lg hover:shadow-green-300 transition duration-500'
       >
         <GrPrevious size={20}/>
       </button>
@@ -113,7 +113,7 @@ const Pagination = ({ data }: PaginationProps) => {
         type="button"
         onClick={handleNextPage}
         disabled={endIndex >= data.length}
-        className='rounded-full hover:border cursor-pointer border-[#19A948] p-4'
+        className='rounded-full border cursor-pointer border-[#19A948] p-4 hover:shadow-lg hover:shadow-green-300 transition duration-500'
       >
         <GrNext size={20}/>
       </button>

@@ -138,7 +138,7 @@ const Review = () => {
             Testimonials
           </h1>
           <div className="text-center ">
-            <p className=" md:max-w-[40%] 2xl:max-w-[20%] mx-auto font-['IBM_Plex_Sans'] font-[400] text-base text-gray-600 ">
+            <p className="md:max-w-[40%] 2xl:max-w-[25%] mx-auto font-['IBM_Plex_Sans'] font-[400] text-base text-gray-600 ">
               See what the travellers are saying for us and the experience they
               enjoyed.
             </p>
@@ -219,7 +219,7 @@ const Review = () => {
         <div className=" text-center">
           <button
             type="button"
-            className="py-3 px-4 border rounded-lg border-[#19A948] font-['IBM_Plex_Sans'] font-[400] text-base text-[#19A948] hover:text-white hover:bg-[#19A948]"
+            className="py-3 px-4 border rounded-lg border-[#19A948] font-['IBM_Plex_Sans'] font-[400] text-base text-[#19A948] hover:text-white hover:bg-[#19A948] transition duration-700"
           >
             Load More
           </button>

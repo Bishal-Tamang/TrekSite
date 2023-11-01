@@ -12,8 +12,6 @@ import things from "../assets/Picture/ThingsToDo/Things.png";
 
 import DefaultPackage from '../components/DefaultPackage';
 
-import BreadCrumbs from "../components/BreadCrumbs";
-
 
 const Things = () => {
   

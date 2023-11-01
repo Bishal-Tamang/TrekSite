@@ -118,7 +118,7 @@ const ContactForm = () => {
               className='block w-full py-3 px-4 text-[#C2C3C5] border border-solid border-[#A7B2C3] rounded-md mb-[1.5rem]'
               />
 
-              <button className="bg-[#19A948] py-3 px-4 rounded-md font-['IBM_Plex_Sans'] font-[400] text-base text-white cursor-pointer hover:bg-[#36C869]">Submit</button>
+              <button className="bg-[#19A948] py-3 px-4 rounded-md font-['IBM_Plex_Sans'] font-[400] text-base text-white cursor-pointer hover:bg-[#36C869] transition duration-500">Submit</button>
             </div>
               
             </form>

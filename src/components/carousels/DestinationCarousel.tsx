@@ -1,6 +1,7 @@
 import { Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useRef, useState } from "react";
+import { Autoplay } from 'swiper';
 
 import { BsCamera } from "react-icons/bs";
 
@@ -20,7 +21,11 @@ const DestinationCarousel = ({ TopCarouselData }) => {
         pagination={{
           clickable: true,
         }}
-        modules={[Pagination]}
+        autoplay={{
+          delay: 2000,
+          disableOnInteraction: false,
+        }}
+        modules={[Autoplay, Pagination]}
         className="mySwiper"
         autoHeight={true}
         loop={true}

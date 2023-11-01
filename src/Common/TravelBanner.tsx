@@ -6,7 +6,7 @@ const TravelBanner = () => {
 
   const navigate = useNavigate();
 
-  const handleClick = (link: string) => {
+  const handleClick = (link: string, index: number) => {
     window.scrollTo(0, 0);
     navigate(link);
   }
@@ -29,8 +29,8 @@ const TravelBanner = () => {
             </p>
           </div>
           <button 
-          className="bg-[#19A948] py-3 px-4 rounded-lg font-['IBM_Plex_Sans'] font-400 text-base text-white cursor-pointer hover:bg-[#128B2B]"
-          onClick={() => handleClick('/write-review')}
+          className="bg-[#19A948] py-3 px-4 rounded-lg font-['IBM_Plex_Sans'] font-400 text-base text-white cursor-pointer hover:bg-[#128B2B] transition duration-700"
+          onClick={() => handleClick('/write-review', 3)}
           >
             Write review
           </button>

@@ -110,14 +110,14 @@ const data = [
          
 
           {Btndata.map(item => (
-            <button type='button' key={item.id} className='border-[#A7B2C3] rounded-lg hover:bg-[#19A948] border-[2px] px-1 py-2 md:px-3 md:py-4 leading-[20px] font-[800] text-xs md:text-base font-["IBM_Plex_Sans"] hover:border-none hover:text-white hover:outline-none min-w-[6.25rem]'>{item.label}</button>
+            <button type='button' key={item.id} className='border-[#A7B2C3] rounded-lg hover:bg-[#19A948] border-[2px] px-1 py-2 md:px-3 md:py-4 leading-[20px] font-[800] text-xs md:text-base font-["IBM_Plex_Sans"] hover:border-none hover:text-white hover:outline-none min-w-[6.25rem] transition duration-700'>{item.label}</button>
           ))}
 
         </div>
 
               {/* Right Buttons */}
               <div>
-                <button type='button' className='hidden border-[#12A347] border-2 py-2 px-[14px] font-["IBM_Plex_Sans"] font-[400] text-["16px"] text-[#12A347] lg:flex gap-2 items-center hover:text-white hover:bg-[#12A347]'>
+                <button type='button' className='hidden rounded-xl border-[#12A347] border-2 py-2 px-[14px] font-["IBM_Plex_Sans"] font-[400] text-["16px"] text-[#12A347] lg:flex gap-2 items-center hover:text-white hover:bg-[#12A347] transition duration-700'>
                   View all <AiOutlineArrowRight size={20} />
                 </button>
               </div>
@@ -127,7 +127,7 @@ const data = [
         <ArrowCarousel data={data}/>
 
         <div className='flex w-full items-center justify-center mt-6'>
-                <button type='button' className='flex gap-2 border-[#12A347] border-2 py-2 px-[14px] font-["IBM_Plex_Sans"] font-[400] text-["16px"] text-[#12A347] lg:hidden hover:text-white hover:bg-[#12A347]'>
+                <button type='button' className='flex items-center gap-2 border-[#12A347] border-2 py-2 px-[14px] font-["IBM_Plex_Sans"] font-[400] text-["16px"] text-[#12A347] lg:hidden hover:text-white hover:bg-[#12A347] transition duration-700'>
                   View all <AiOutlineArrowRight size={20} />
                 </button>
               </div>

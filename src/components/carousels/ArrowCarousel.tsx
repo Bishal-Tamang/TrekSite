@@ -1,93 +1,51 @@
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import AliceCarousel from "react-alice-carousel"
+import { RiStarSFill } from "react-icons/ri"
 
-import Slider from "react-slick";
-import { RiStarSFill } from "react-icons/ri";
+import { FiChevronRight, FiChevronLeft } from "react-icons/fi"
 
-interface Item {
-  id: number;
-  url: string;
-  location: string;
-  duration: string;
-  packageCategory: string; 
-  review: number;
-  price: number;
-  // starCount: number;
-}
+const ArrowCarousel = ({data}) => {
 
-interface ArrowCarouselProps {
-  data: Item[];
-}
-
-const ArrowCarousel: React.FC<ArrowCarouselProps> = ({ data }) => {
-
-  function SampleNextArrow(props: any) {
-    const { className, style, onClick } = props;
-    return (
-      <div
-        className={className}
-        style={{
-          ...style,
-          background: "white",
-          padding: "2rem",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          color: "black",
-          borderRadius: "100%",
-          fontSize: "20px",
-        }}
-        onClick={onClick}
-      />
-    );
-  }
-
-  const settings = {
-    dots: false,
-    arrows: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    nextArrow: <SampleNextArrow />,
-    // prevArrow: <SamplePrevArrow />,
+  const responsive = {
+    0: { items: 1 },
+    568: { items: 2 },
+    1024: { items: 3 },
+    1440: { items: 4 },
   };
 
-  const MidSettings = {
-    dots: false,
-    arrows: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 2,
-    slidesToScroll: 1,
-   
-  }
+  const NextBtn = () => {
+    return (
+      <div className="hidden lg:flex absolute z-50 cursor-pointer bg-white drop-shadow-lg border border-white text-green-400 rounded-full p-4 items-center justify-center hover:text-black hover:bg-white duration-500 hover:shadow-md hover:shadow-slate-400 top-[35%] 2xl:top-[40%] -right-[2%] 2xl:-right-[2%]">
+        <FiChevronRight className="h-6 w-6" />
+      </div>
+    );
+  };
 
-  const SmolSettings = {
-    dots: false,
-    arrows: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-   
-  }
+  const PrevBtn = () => {
+    return (
+      <div className="hidden lg:flex absolute z-50 cursor-pointer bg-white drop-shadow-lg border border-white text-green-400 rounded-full p-4 items-center justify-center hover:text-black hover:bg-white duration-500 hover:shadow-md hover:shadow-slate-400 top-[35%] 2xl:top-[40%] -left-[4%] 2xl:-left-[2%]">
+        <FiChevronLeft className="h-6 w-6" />
+      </div>
+    );
+  };
 
-  const newSettings = window.innerWidth > 1024 ? (settings) :  window.innerWidth > 767 ? (MidSettings) :   (SmolSettings);
 
   return (
-
-    <Slider {...newSettings}>
-      {data.map(item => (
+    <div className="w-full">
+      <AliceCarousel
+          disableDotsControls
+          responsive={responsive}
+          renderNextButton={NextBtn}
+          renderPrevButton={PrevBtn}
+          infinite
+          mouseTracking
+          keyboardNavigation
+        >
+        {data.map(item => (
         <div
           key={item.id}
-          className="md:max-w-1/3 mx-[2px] flex flex-col rounded-2xl shadow-xl ring-offset-5 ring-offset-y-5 ring-offset-30 ring-rgba(0, 0, 0, 0.1) cursor-pointer md:min-h-[27rem] overflow:hidden"
+          className="md:max-w-1/3 lg:max-w-1/3 mx-1 flex flex-col rounded-2xl shadow-md ring-rgba(0, 0, 0, 0.1) cursor-pointer md:min-h-[28rem] overflow:hidden mb-2"
         >
-
           {/* button icon */}
-
-
-
           <div className="top relative p-2">
             <img src={item.url} alt="" className="w-full" />
             <p className='font-["IBM_Plex_Sans"] font-[500] text-[0.5rem] md:text-base text-[#F3FFFD] bg-[#323C52] px-2 py-2  rounded-[5px] absolute md:left-[5%] left-[10%] bottom-[-3%]'>
@@ -123,8 +81,9 @@ const ArrowCarousel: React.FC<ArrowCarouselProps> = ({ data }) => {
           </div>
         </div>
       ))}
-    </Slider>
-  );
-};
+        </AliceCarousel>
+    </div>
+  )
+}
 
-export default ArrowCarousel;
+export default ArrowCarousel

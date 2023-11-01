@@ -259,9 +259,9 @@ const PlanForm = () => {
         </div>
 
         <div className="buttons flex justify-end gap-4">
-        <button type="reset" className="bg-[#E6FAF0] rounded-md py-3 px-4 font-['IBM_Plex_Sans'] font-[400] text-[#616161] text-base cursor-pointer hover:bg-[#D4F1E3]">Cancel</button>
+        <button type="reset" className="bg-[#E6FAF0] rounded-md py-3 px-4 font-['IBM_Plex_Sans'] font-[400] text-[#616161] text-base cursor-pointer hover:bg-[#D4F1E3] transition duration-500">Cancel</button>
 
-        <button type="submit" className="bg-[#19A948] py-3 px-4 rounded-md font-['IBM_Plex_Sans'] font-[400] text-white text-base cursor-pointer hover:bg-[#128B2B] ">Submit</button>
+        <button type="submit" className="bg-[#19A948] py-3 px-4 rounded-md font-['IBM_Plex_Sans'] font-[400] text-white text-base cursor-pointer hover:bg-[#128B2B] transition duration-500 ">Submit</button>
         </div>
       </form>
       <DevTool control={control} />

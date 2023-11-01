@@ -1,105 +1,56 @@
-import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
-import '../../assets/Styles/destinationThingsCarousel.css'
+import AliceCarousel from "react-alice-carousel";
+import { FiChevronRight, FiChevronLeft } from "react-icons/fi";
 
+const DestinationThingsCarousel = ({data}) => {
 
-interface ImgProps {
-    SmolSliderData: Array<{id: number; img: string; title: string}>;
-}
-
-interface ButtonGroupProps {
-  next?: () => void;
-  previous?: () => void;
-  goToSlide?: (slideIndex: number) => void;
-  // Rename carouselState to 'state' to match the expected prop name
-  carouselState?: {
-    currentSlide?: number;
+  const responsive = {
+    0: { items: 1 },
+    568: { items: 2 },
+    768: { items: 3 },
+    1024: { items: 4 },
+    1440: {items: 5},
   };
-}
 
-const DestinationThingsCarousel: React.FC<ImgProps> = ( {SmolSliderData}) => {
-
-    const responsive = {
-      largeDesktop: {
-          breakpoint: {max: 3000, min:1530 },
-          items: 5,
-          slidesToSlide: 1
-      },
-        desktop: {
-          breakpoint: { max: 1530, min: 1024 },
-          items: 4,
-          slidesToSlide: 1 // optional, default to 1.
-        },
-        tablet: {
-          breakpoint: { max: 1024, min: 464 },
-          items: 2,
-          slidesToSlide: 1 // optional, default to 1.
-        },
-        mobile: {
-          breakpoint: { max: 464, min: 0 },
-          items: 1,
-          slidesToSlide: 1 // optional, default to 1.
-        }
-      };
-
-      const PrevBtn = ({className, onClick}) => {
-        return (
-            <div>
-            </div>
-        )
-    }
-
-    const NxtBtn = ({onClick}) => {
-        return (
-            <div> 
-            </div>
-        )
-    }
-
-      const ButtonGroup: React.FC<ButtonGroupProps>  = ({ next, previous, goToSlide, ...rest }) => {
-
-
-        const { carouselState: { currentSlide } } = rest;
-
-       
-
-        return (
-          <div className="carousel-button-group absolute">
-            <PrevBtn className={currentSlide === 0 ? 'disable' : ''} onClick={() => previous()} />
-            <NxtBtn onClick={() => next()} />
-          </div>
-        );
-      };
-
+  const NextBtn = () => {
     return (
-       
-         
-          <Carousel 
-          responsive={responsive} 
-          arrows={true}
-          infinite={true}
-          removeArrowOnDeviceType={['mobile', 'tablet']} 
-          itemClass="item-class"
-          containerClass= "container-class"
-          customButtonGroup={<ButtonGroup />}
-          >
-            {SmolSliderData.map(item => (
-                <div
-                key={item.id}
-                className="item-class container-class relative h-64 2xl:h-80 bg-cover bg-center rounded-2xl cursor-pointer"
-                style={{
-                  backgroundImage: `linear-gradient(to right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2)), url(${item.img})`,
-                }}
-              >
-                <div className="absolute inset-0 flex items-end justify-start px-2 md:py-4 md:px-4">
-                  <h2 className="font-['Manrope'] font-[700] text-base xl:text-2xl text-white p-2 md:p-0 ">
-                    {item.title}
-                  </h2>
-                </div>
-              </div>
-            ))}
-          </Carousel>
-    )
-    }
+      <div className="hidden lg:flex absolute z-50 cursor-pointer bg-white drop-shadow-lg border border-white text-green-400 rounded-full p-4 items-center justify-center hover:text-black hover:bg-white duration-500 hover:shadow-md hover:shadow-slate-400 top-[35%] 2xl:top-[40%] -right-[2%] 2xl:-right-[2%]">
+        <FiChevronRight className="h-6 w-6" />
+      </div>
+    );
+  };
+
+  const PrevBtn = () => {
+    return (
+      <div className="hidden lg:flex absolute z-50 cursor-pointer bg-white drop-shadow-lg border border-white text-green-400 rounded-full p-4 items-center justify-center hover:text-black hover:bg-white duration-500 hover:shadow-md hover:shadow-slate-400 top-[35%] 2xl:top-[40%] -left-[2%] 2xl:-left-[2%]">
+        <FiChevronLeft className="h-6 w-6" />
+      </div>
+    );
+  };
+
+  return (
+    <div className="w-full">
+        <AliceCarousel
+          responsive={responsive}
+          disableDotsControls
+          renderNextButton={NextBtn}
+          renderPrevButton={PrevBtn}
+          mouseTracking
+          keyboardNavigation
+          infinite
+        >
+          {data.map(item => (
+            <div 
+              key={item.id}
+              className="relative rounded-lg w-auto bg-center bg-contain 2xl:bg-cover bg-no-repeat min-h-[220px] mx-2"  
+              style={{backgroundImage: `url(${item.img})`}}
+            >
+              <h1 className="absolute bottom-[5%] left-[15%] md:left-[5%] md:bottom-[10%] lg:bottom-[5%]  text-white font-[Manrope] text-lg tracking-[2%] font-semibold">{item.title}</h1>
+            </div>
+          ))}
+        </AliceCarousel>
+    </div>
+  )
+}
 
 export default DestinationThingsCarousel
+
