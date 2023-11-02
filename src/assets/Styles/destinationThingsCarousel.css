@@ -1,0 +1,30 @@
+.item-class{
+    padding-left: 1rem;
+    padding-right: 1rem
+}
+
+.container-class .react-multiple-carousel__arrow::before{
+    color: #66C68D;
+    background-color: white;
+    border-radius: 50%;
+    border: 1px solid #66C68D;
+    padding: .5rem 1rem;
+}
+
+.react-multiple-carousel__arrow--right {
+    right: 0%;
+    top: 35%;
+}
+
+.react-multiple-carousel__arrow--left {
+    left: 0%;
+    top: 30%;
+}
+
+/* .slider-class .react-multi-carousel-item .item-class{
+    width: auto
+}
+
+.react-multi-carousel-item .react-multi-carousel-item--active .item-class {
+    width: auto;
+} */

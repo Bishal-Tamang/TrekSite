@@ -1,0 +1,17 @@
+.breadCrumbs {
+    display: flex;
+}
+
+.breadCrumbs ::after {
+    content: '/';
+    margin-left: 0.5rem;
+
+}
+
+.breadCrumbs > *:not(:last-child)::after {
+  content: '';
+}
+
+.breadCrumbs > *:last-child::after {
+    content: '';
+  }

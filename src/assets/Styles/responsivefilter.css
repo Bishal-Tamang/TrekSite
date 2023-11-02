@@ -1,0 +1,38 @@
+input[type="radio"] {
+    display: none;
+  }
+  
+  input[type="radio"] + label {
+    position: relative;
+    padding-left: 25px; 
+    cursor: pointer;
+  }
+  
+
+  input[type="radio"] + label::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 6px; 
+    width: 16px; 
+    height: 16px; 
+    border-radius: 10%;
+    border: 1px solid #19A948; 
+  }
+  
+
+  input[type="radio"]:checked + label::before {
+    background-color: #19A948; 
+  }
+
+  input[type="radio"]:checked + label::after {
+    content: "";
+    position: absolute;
+    top: 7px; 
+    left: 5px; 
+    width: 6px;
+    height: 10px; 
+    border: solid white; 
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
